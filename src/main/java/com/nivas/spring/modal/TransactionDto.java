@@ -1,4 +1,4 @@
-package com.altimetrik.spring.modal;
+package com.nivas.spring.modal;
 
 import java.io.Serializable;
 

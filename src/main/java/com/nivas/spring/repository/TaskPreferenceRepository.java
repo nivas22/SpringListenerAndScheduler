@@ -1,6 +1,6 @@
-package com.altimetrik.spring.repository;
+package com.nivas.spring.repository;
 
-import com.altimetrik.spring.modal.TaskPreference;
+import com.nivas.spring.modal.TaskPreference;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

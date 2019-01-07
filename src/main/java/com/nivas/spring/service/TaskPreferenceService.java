@@ -1,7 +1,7 @@
-package com.altimetrik.spring.service;
+package com.nivas.spring.service;
 
-import com.altimetrik.spring.modal.TaskPreference;
-import com.altimetrik.spring.repository.TaskPreferenceRepository;
+import com.nivas.spring.modal.TaskPreference;
+import com.nivas.spring.repository.TaskPreferenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

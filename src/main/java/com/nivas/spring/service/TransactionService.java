@@ -1,7 +1,7 @@
-package com.altimetrik.spring.service;
+package com.nivas.spring.service;
 
-import com.altimetrik.spring.modal.Transaction;
-import com.altimetrik.spring.repository.TransactionRepository;
+import com.nivas.spring.modal.Transaction;
+import com.nivas.spring.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

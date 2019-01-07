@@ -1,9 +1,9 @@
-package com.altimetrik.spring.task;
+package com.nivas.spring.task;
 
-import com.altimetrik.spring.modal.TaskPreference;
-import com.altimetrik.spring.modal.Transaction;
-import com.altimetrik.spring.service.ITaskPreferenceService;
-import com.altimetrik.spring.service.ITransactionService;
+import com.nivas.spring.modal.TaskPreference;
+import com.nivas.spring.modal.Transaction;
+import com.nivas.spring.service.ITaskPreferenceService;
+import com.nivas.spring.service.ITransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

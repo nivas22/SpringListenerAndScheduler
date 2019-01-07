@@ -1,4 +1,4 @@
-package com.altimetrik.spring.config;
+package com.nivas.spring.config;
 
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;

@@ -1,9 +1,7 @@
-package com.altimetrik.spring.task;
+package com.nivas.spring.task;
 
-import com.altimetrik.spring.modal.TaskPreference;
+import com.nivas.spring.modal.TaskPreference;
 import org.springframework.context.ApplicationEvent;
-
-import java.util.Date;
 
 public class OnPurgeTaskTriggerEvent extends ApplicationEvent {
 

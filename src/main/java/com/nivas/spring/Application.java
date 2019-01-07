@@ -1,4 +1,4 @@
-package com.altimetrik.spring;
+package com.nivas.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableJms
-@ComponentScan(basePackages = "com.altimetrik.spring")
+@ComponentScan(basePackages = "com.nivas.spring")
 @EnableScheduling
 @SpringBootApplication
 public class Application {

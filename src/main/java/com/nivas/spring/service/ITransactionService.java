@@ -1,6 +1,6 @@
-package com.altimetrik.spring.service;
+package com.nivas.spring.service;
 
-import com.altimetrik.spring.modal.Transaction;
+import com.nivas.spring.modal.Transaction;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.altimetrik.spring.controller;
+package com.nivas.spring.controller;
 
-import com.altimetrik.spring.modal.Transaction;
-import com.altimetrik.spring.modal.TransactionDto;
-import com.altimetrik.spring.service.ITransactionService;
+import com.nivas.spring.modal.Transaction;
+import com.nivas.spring.modal.TransactionDto;
+import com.nivas.spring.service.ITransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

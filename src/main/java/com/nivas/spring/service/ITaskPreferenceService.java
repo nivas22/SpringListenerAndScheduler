@@ -1,6 +1,6 @@
-package com.altimetrik.spring.service;
+package com.nivas.spring.service;
 
-import com.altimetrik.spring.modal.TaskPreference;
+import com.nivas.spring.modal.TaskPreference;
 
 
 public interface ITaskPreferenceService {
