@@ -35,6 +35,7 @@ public class TaskService {
         logger.info("Reviewed scheduler job is started...");
         Long startedTime = System.currentTimeMillis();
         TaskPreference task = preferenceService.findByTask(TRANSACTION_TASK);
+
         if (task == null) {
             preferenceService.save(new TaskPreference(TRANSACTION_TASK, 0L));
         } else {

@@ -1,6 +1,8 @@
 package com.nivas.spring.task.listener;
 
+import com.nivas.spring.modal.LiveTransaction;
 import com.nivas.spring.modal.Transaction;
+import com.nivas.spring.service.ILiveTransactionService;
 import com.nivas.spring.service.ITaskPreferenceService;
 import com.nivas.spring.service.ITransactionService;
 import com.nivas.spring.task.OnPurgeTaskTriggerEvent;
@@ -10,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static com.nivas.spring.task.TaskService.TRANSACTION_TASK;
 
@@ -22,12 +26,13 @@ public class PurgeTaskListener implements ApplicationListener<OnPurgeTaskTrigger
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private
-    ITransactionService transactionService;
+    private ITransactionService transactionService;
 
     @Autowired
-    private
-    ITaskPreferenceService preferenceService;
+    private ILiveTransactionService currentTransactionService;
+
+    @Autowired
+    private ITaskPreferenceService preferenceService;
 
     @Override
     public void onApplicationEvent(OnPurgeTaskTriggerEvent onPurgeTaskTriggerEvent) {
@@ -38,8 +43,29 @@ public class PurgeTaskListener implements ApplicationListener<OnPurgeTaskTrigger
         logger.info("Purge started on;"+onPurgeTaskTriggerEvent.getTriggeredDate().toString());
         List<Transaction> transactions = transactionService.findTransactions(onPurgeTaskTriggerEvent.getTask().getPickedTime());
         logger.info("Total Transaction Count:"+transactions.size());
+
+        //Duplication Removal using LinkedHashSet
         Set<Transaction> originalRecords = new LinkedHashSet<>(transactions);
-        logger.info("After remove duplication Transaction Count:"+originalRecords.size());
+        logger.info("After remove duplication using LinkedHashSet Transaction Count:" + originalRecords.size());
+
+        //Duplication Removal Using Stream
+        List<Transaction> collect = transactions.stream().distinct().collect(Collectors.toList());
+        logger.info("After remove duplication using Stream Transaction Count:" + collect.size());
+
+        //Save Live transaction into DB
+        List<LiveTransaction> liveTransactions = new ArrayList<>();
+        collect.forEach(transaction -> {
+            LiveTransaction liveTransaction = new LiveTransaction();
+            liveTransaction.setAmount(transaction.getAmount());
+            liveTransaction.setCardNumber(transaction.getCardNumber());
+            liveTransaction.setStatus(transaction.getStatus());
+            liveTransaction.setDate(transaction.getDate());
+            liveTransaction.setCreated(System.currentTimeMillis());
+            liveTransactions.add(liveTransaction);
+
+        });
+        currentTransactionService.saveAll(liveTransactions);
+
         preferenceService.updateTask(TRANSACTION_TASK, onPurgeTaskTriggerEvent.getTriggeredDate());
     }
 }
