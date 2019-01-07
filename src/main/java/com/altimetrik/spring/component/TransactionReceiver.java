@@ -24,17 +24,13 @@ public class TransactionReceiver {
     private ITransactionService transactionService;
 
     @JmsListener(destination = "TransactionQueue", containerFactory = "connectionFactory")
-    public void receiveMessage(TransactionDto transactionDto) {
+    public void receiveMessage(TransactionDto transactionDto) throws ParseException {
         logger.info("Received <" + transactionDto.toString() + ">");
         Transaction transaction = new Transaction();
         transaction.setCardNumber(transactionDto.getCardNumber());
         transaction.setAmount(transactionDto.getAmount());
         transaction.setStatus(transactionDto.getStatus());
-        try {
-            transaction.setDate(FORMAT.parse(transactionDto.getDate()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        transaction.setDate(FORMAT.parse(transactionDto.getDate()));
         transaction.setCreated(System.currentTimeMillis());
         transactionService.save(transaction);
     }
