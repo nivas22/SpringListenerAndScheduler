@@ -14,8 +14,8 @@ public class TaskPreferenceService implements ITaskPreferenceService {
 
     @Override
     @Transactional
-    public void updateTask(String task, Long picked_time) {
-        repository.updateTask(task, picked_time);
+    public void updateTask(String task, Long pickedTime) {
+        repository.updateTask(task, pickedTime);
     }
 
 

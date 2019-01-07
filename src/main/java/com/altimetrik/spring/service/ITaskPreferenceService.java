@@ -5,7 +5,7 @@ import com.altimetrik.spring.modal.TaskPreference;
 
 public interface ITaskPreferenceService {
 
-    void updateTask(String task, Long picked_time);
+    void updateTask(String task, Long pickedTime);
 
     TaskPreference findByTask(String task);
 
