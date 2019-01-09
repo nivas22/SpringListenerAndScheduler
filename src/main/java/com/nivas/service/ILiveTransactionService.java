@@ -1,6 +1,7 @@
-package com.nivas.spring.service;
+package com.nivas.service;
 
-import com.nivas.spring.modal.LiveTransaction;
+import com.nivas.modal.LiveTransaction;
+import com.nivas.modal.Transaction;
 
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface ILiveTransactionService {
     List<LiveTransaction> findTransactions(Long pickedTime);
 
     LiveTransaction findTransaction(LiveTransaction liveTransaction);
+
+    void save(List<com.nivas.avro.Transaction> transactionList);
+
+    void saveTransactions(List<Transaction> transactionList);
 }

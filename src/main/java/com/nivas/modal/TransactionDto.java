@@ -1,4 +1,4 @@
-package com.nivas.spring.modal;
+package com.nivas.modal;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
-package com.nivas.spring.service;
+package com.nivas.service;
 
-import com.nivas.spring.modal.TaskPreference;
-import com.nivas.spring.repository.TaskPreferenceRepository;
+import com.nivas.modal.TaskPreference;
+import com.nivas.repository.TaskPreferenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

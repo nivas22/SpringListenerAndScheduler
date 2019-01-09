@@ -1,6 +1,6 @@
-package com.nivas.spring.service;
+package com.nivas.service;
 
-import com.nivas.spring.modal.TaskPreference;
+import com.nivas.modal.TaskPreference;
 
 
 public interface ITaskPreferenceService {

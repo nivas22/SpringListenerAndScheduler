@@ -1,14 +1,13 @@
-package com.nivas.spring.task;
+package com.nivas.task;
 
-import com.nivas.spring.modal.TaskPreference;
-import com.nivas.spring.modal.Transaction;
-import com.nivas.spring.service.ITaskPreferenceService;
-import com.nivas.spring.service.ITransactionService;
+import com.nivas.modal.TaskPreference;
+import com.nivas.modal.Transaction;
+import com.nivas.service.ITaskPreferenceService;
+import com.nivas.service.ITransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +29,7 @@ public class TaskService {
     private ApplicationEventPublisher eventPublisher;
 
     //Reviewed Data
-    @Scheduled(cron = "${task.cron.expression}")
+//    @Scheduled(cron = "${task.cron.expression}")
     public void getData() {
         logger.info("Reviewed scheduler job is started...");
         Long startedTime = System.currentTimeMillis();

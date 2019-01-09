@@ -1,7 +1,7 @@
-package com.nivas.spring.service;
+package com.nivas.service;
 
-import com.nivas.spring.modal.Transaction;
-import com.nivas.spring.repository.TransactionRepository;
+import com.nivas.modal.Transaction;
+import com.nivas.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,13 +34,5 @@ public class TransactionService implements ITransactionService {
                 transaction.getDate(), transaction.getStatus());
     }
 
-    @Override
-    public void saveAll(List<Transaction> transactions) {
-        transactions.forEach(transaction -> {
-            Transaction checkTransaction = findTransaction(transaction);
-            if (checkTransaction == null) {
-                save(transaction);
-            }
-        });
-    }
+
 }

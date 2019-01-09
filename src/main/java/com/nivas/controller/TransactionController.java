@@ -1,8 +1,8 @@
-package com.nivas.spring.controller;
+package com.nivas.controller;
 
-import com.nivas.spring.modal.Transaction;
-import com.nivas.spring.modal.TransactionDto;
-import com.nivas.spring.service.ITransactionService;
+import com.nivas.modal.Transaction;
+import com.nivas.modal.TransactionDto;
+import com.nivas.service.ITransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +37,7 @@ public class TransactionController {
     }
 
     @RequestMapping(value = "/transaction", method = RequestMethod.GET)
-    public List<Transaction> getTransactions(@RequestBody Transaction transaction) {
-        transactionService.save(transaction);
+    public List<Transaction> getTransactions() {
         return transactionService.getAllTransactions();
     }
 

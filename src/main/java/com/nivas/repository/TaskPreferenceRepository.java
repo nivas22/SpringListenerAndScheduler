@@ -1,6 +1,6 @@
-package com.nivas.spring.repository;
+package com.nivas.repository;
 
-import com.nivas.spring.modal.TaskPreference;
+import com.nivas.modal.TaskPreference;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -1,6 +1,6 @@
-package com.nivas.spring.task;
+package com.nivas.task;
 
-import com.nivas.spring.modal.TaskPreference;
+import com.nivas.modal.TaskPreference;
 import org.springframework.context.ApplicationEvent;
 
 public class OnPurgeTaskTriggerEvent extends ApplicationEvent {

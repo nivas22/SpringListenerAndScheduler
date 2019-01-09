@@ -1,11 +1,11 @@
-package com.nivas.spring.task.listener;
+package com.nivas.task.listener;
 
-import com.nivas.spring.modal.LiveTransaction;
-import com.nivas.spring.modal.Transaction;
-import com.nivas.spring.service.ILiveTransactionService;
-import com.nivas.spring.service.ITaskPreferenceService;
-import com.nivas.spring.service.ITransactionService;
-import com.nivas.spring.task.OnPurgeTaskTriggerEvent;
+import com.nivas.modal.LiveTransaction;
+import com.nivas.modal.Transaction;
+import com.nivas.service.ILiveTransactionService;
+import com.nivas.service.ITaskPreferenceService;
+import com.nivas.service.ITransactionService;
+import com.nivas.task.OnPurgeTaskTriggerEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.nivas.spring.task.TaskService.TRANSACTION_TASK;
+import static com.nivas.task.TaskService.TRANSACTION_TASK;
 
 @Component
 public class PurgeTaskListener implements ApplicationListener<OnPurgeTaskTriggerEvent> {

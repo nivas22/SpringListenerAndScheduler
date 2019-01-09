@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "Transaction",
+  "namespace" : "com.nivas.avro",
+  "doc" : "Schema to hold transaction object",
+  "fields" : [{
+    "name" : "id",
+    "type" : "long"
+  },
+  {
+    "name" : "cardNumber",
+    "type" : "string"
+  },
+  {
+      "name" : "amount",
+      "type" : "long"
+  },
+  {
+      "name" : "status",
+      "type" : "string"
+  },
+  {
+        "name" : "date",
+        "type": "int",
+        "logicalType": "date"
+   }]
+}

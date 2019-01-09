@@ -1,6 +1,6 @@
-package com.nivas.spring.repository;
+package com.nivas.repository;
 
-import com.nivas.spring.modal.Transaction;
+import com.nivas.modal.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

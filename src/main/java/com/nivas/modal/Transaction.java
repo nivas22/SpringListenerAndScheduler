@@ -1,4 +1,4 @@
-package com.nivas.spring.modal;
+package com.nivas.modal;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -7,8 +7,8 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "currenttransaction")
-public class LiveTransaction implements Serializable {
+@Table(name = "transaction")
+public class Transaction implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -87,8 +87,8 @@ public class LiveTransaction implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof LiveTransaction)) return false;
-        LiveTransaction that = (LiveTransaction) o;
+        if (!(o instanceof Transaction)) return false;
+        Transaction that = (Transaction) o;
         return Objects.equals(cardNumber, that.cardNumber) &&
                 Objects.equals(amount, that.amount) &&
                 Objects.equals(status, that.status) &&

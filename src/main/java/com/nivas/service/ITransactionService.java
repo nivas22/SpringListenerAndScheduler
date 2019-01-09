@@ -1,6 +1,6 @@
-package com.nivas.spring.service;
+package com.nivas.service;
 
-import com.nivas.spring.modal.Transaction;
+import com.nivas.modal.Transaction;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public interface ITransactionService {
 
     Transaction save(Transaction transaction);
 
-    void saveAll(List<Transaction> transactions);
+    //  void saveAll(List<Transaction> transactions);
 
     List<Transaction> getAllTransactions();
 

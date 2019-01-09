@@ -1,4 +1,4 @@
-package com.nivas.spring;
+package com.nivas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableJms
-@ComponentScan(basePackages = "com.nivas.spring")
+@ComponentScan(basePackages = "com.nivas")
 @EnableScheduling
 @SpringBootApplication
 public class Application {
